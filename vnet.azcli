@@ -2,7 +2,7 @@
 
 # az login 
 
-RgName="rangervnetrg"
+RgName="CLI2Stuff"
 Location="eastus2"
 
 
