@@ -1,6 +1,6 @@
 ﻿# Add-AzureRmAccount
 Get-Date
-$rgName="testtesttest"
+$rgName="testtesttest2"
 $location="eastus2"
 
 # Create a resource group.
@@ -36,17 +36,17 @@ $servercred = Get-Credential -Message "Enter a username and password for the ser
 $server1vmConfig = New-AzVMConfig -VMName "server1" -VMSize "Standard_DS2" | 
   Set-AzVMOperatingSystem -Windows -ComputerName "server1" -Credential $servercred | 
   Set-AzVMSourceImage -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2019-Datacenter" -Version latest | 
-  Set-AzVMBootDiagnostics -Disable | Add-AzVMNetworkInterface -Id $server1nic.Id 
+  Add-AzVMNetworkInterface -Id $server1nic.Id 
 
 $server2vmConfig = New-AzVMConfig -VMName "server2" -VMSize "Standard_DS2" | 
   Set-AzVMOperatingSystem -Windows -ComputerName "server2" -Credential $servercred | 
   Set-AzVMSourceImage -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2019-Datacenter" -Version latest | 
-  Set-AzVMBootDiagnostics -Disable | Add-AzVMNetworkInterface -Id $server2nic.Id 
+  Add-AzVMNetworkInterface -Id $server2nic.Id 
 
 $server3vmConfig = New-AzVMConfig -VMName "server3" -VMSize "Standard_DS2" | 
   Set-AzVMOperatingSystem -Windows -ComputerName "server3" -Credential $servercred | 
   Set-AzVMSourceImage -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2019-Datacenter" -Version latest | 
-  Set-AzVMBootDiagnostics -Disable | Add-AzVMNetworkInterface -Id $server3nic.Id 
+  Add-AzVMNetworkInterface -Id $server3nic.Id 
 
 
 
