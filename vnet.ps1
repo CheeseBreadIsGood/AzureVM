@@ -1,5 +1,5 @@
 ﻿# Add-AzureRmAccount
-
+Get-Date
 $rgName="testtesttest"
 $location="eastus2"
 
