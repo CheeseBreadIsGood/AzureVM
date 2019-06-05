@@ -1,6 +1,9 @@
 ﻿# Add-AzureRmAccount
 Get-Date
-$rgName="testtesttest2"
+# Acquire Server credentials
+$servercred = Get-Credential -Message "Enter a username and password for the servers"
+
+$rgName="testtesttest3"
 $location="eastus2"
 
 # Create a resource group.
@@ -29,8 +32,7 @@ $server3nic = New-AzNetworkInterface -ResourceGroupName $rgName -Location $locat
 ############################################################################
 
 
-# Acquire Server credentials
-$servercred = Get-Credential -Message "Enter a username and password for the servers"
+
 
 # Create Server 1, 2 & 3
 $server1vmConfig = New-AzVMConfig -VMName "server1" -VMSize "Standard_DS2" | 
